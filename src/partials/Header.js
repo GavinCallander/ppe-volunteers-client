@@ -4,6 +4,7 @@ import React from 'react';
 import { AuthLink } from '../components'
 
 export const Header = props => {
+
     
     const handleLogout = e => {
         localStorage.removeItem('userToken')
@@ -24,6 +25,7 @@ export const Header = props => {
                     <AuthLink text='SIGN UP' setShowSignup={props.setShowSignup} />
                     <AuthLink text='LOGIN' setShowLogin={props.setShowLogin} />
                 </div>
+
             </div>
         )
     }

@@ -14,6 +14,9 @@ export const CallToAction = props => {
         else if(props.text === 'REQUEST SUPPLIES') {
             props.setSignupType('CLINIC')
         }
+        else {
+            props.setShowSignup('false')
+        }
 
     }
 

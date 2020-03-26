@@ -48,13 +48,6 @@ export const Landing = props => {
                 </div>
             </div>
             <div className='landing landing-main'>
-                <div className='landing-main landing-main-box'>
-                    <InfoSmall text='Be a producer' />
-                    <InfoSmall text='Help deliver' />
-
-                </div>
-                </div>
-
                 <div className='landing landing-main'>
                     <div className='landing-main landing-main-box'>
                         <InfoSmall text='Be a producer' />
@@ -68,13 +61,13 @@ export const Landing = props => {
                         <InfoLarge text='Face Shields' />
                         <InfoLarge text='Gowns' />
                     </div>
-
+                </div>
                 <br />
-                <CallToAction text='REQUEST SUPPLIES' />
+                <CallToAction text='REQUEST SUPPLIES' setShowSignup={setShowSignup} signupType={signupType} setSignupType={setSignupType}/>
                 <br />
             </div>
             <div className='landing landing-donate' name='donate'>
-                <div className='landing-donate-message'>
+                {/* <div className='landing-donate-message'>
                     <p className='heading heading-one'>Donate</p>
                     <p className='body-font body-two landing-donate-text'>
                         Your contributions cover the cost to volunteers for materials and delivery
@@ -84,7 +77,7 @@ export const Landing = props => {
                     <br />
                     <CallToAction text='REQUEST SUPPLIES' setShowSignup={setShowSignup} signupType={signupType} setSignupType={setSignupType}/>
                     <br />
-                </div>
+                </div> */}
                 <div className='landing landing-donate' name='donate'>
                     <div className='landing-donate-message'>
                         <p className='heading heading-one'>Donate</p>
@@ -93,11 +86,11 @@ export const Landing = props => {
                         </p>
                         <CallToAction text='DONATE MONEY' />
                         <br />
-                        <CallToAction text='DONATE SUPPLIES' />
+                        <CallToAction text='DONATE SUPPLIES' setShowSignup={setShowSignup} />
                     </div>
                 </div>
-
-             <Footer />
+            </div>
+            <Footer />
         </div>
     )
 };

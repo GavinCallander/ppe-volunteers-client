@@ -9,6 +9,9 @@
   font-size: 1.87em;
   text-decoration: none;
 }
+.heading-one {
+  font-size: 3.75em;
+}
 /* components */
 .auth-link {
   padding: .1em;
@@ -27,7 +30,17 @@
   flex-direction: column;
 }
 .landing-banner {
-  height: 39vh;
+  height: 65vh;
+  border: 1px solid black;
+}
+.landing-banner-message {
+  margin: 0 auto;
+  height: 55vh;
+  width: 50vw;
+  text-align: center;
+}
+.landing-banner-text {
+  margin-top: -1.5em;
 }
 /* partials */
 .header {

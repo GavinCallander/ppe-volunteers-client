@@ -1,18 +1,26 @@
 // dependencies
-import React from 'react';
-
-import { Landing } from './pages/Landing';
-import { Portal } from './pages/Portal';
-import { Volunteer } from './pages/Volunteer';
-
-import { Footer, Header } from './partials';
-
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+// page components
+import { Landing } from './pages/landing';
+// styling
 import './App.css';
 
 export const App = () => {
+
+  const [token, setToken] = useState('');
+  const [user, setUser] = useState(null);
+
   return (
-    <div className='app'>
-      <h1>Hello, front end</h1>
-    </div>
+    <Router>
+      <div className='app'>
+        
+        <Route exact path='/'
+          render={() => 
+          <Landing />
+        } />
+
+      </div>
+    </Router>
   )
 };

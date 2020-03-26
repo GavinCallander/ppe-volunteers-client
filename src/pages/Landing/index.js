@@ -13,12 +13,12 @@ export const Landing = props => {
     
     let [showSignup, setShowSignup] = useState(false)
     let [showLogin, setShowLogin] = useState(false)
-    
+
     const closeModal = () => {
         if(showSignup) { setShowSignup(false) }  
         if(showLogin) { setShowLogin(false) } 
     }
-    
+
     return (
         <div className='landing'>
             <div className='landing landing-banner'>
@@ -29,7 +29,7 @@ export const Landing = props => {
                     <p className='heading heading-one'>
                         Health clinics are in dire need of masks and other supplies
                     </p>
-                    <p className='body-two landing-banner-text'>
+                    <p className='body-font body-two landing-banner-text'>
                         Help fight the spread and protect healthcare workers by sewing or delivering supplies for your community clinics
                     </p>
                 </div>
@@ -54,7 +54,7 @@ export const Landing = props => {
             <div className='landing landing-donate' name='donate'>
                 <div className='landing-donate-message'>
                     <p className='heading heading-one'>Donate</p>
-                    <p className='body-two landing-donate-text'>
+                    <p className='body-font body-two landing-donate-text'>
                         Your contributions cover the cost to volunteers for materials and delivery
                     </p>
                     <CallToAction text='DONATE MONEY' />

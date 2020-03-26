@@ -13,10 +13,10 @@ export const Header = props => {
             <div className='header'>
                 <h1 className='header header-logo'>Logo</h1>
                 <div className='header header-nav'>
-                    <a href='' className='body-two'>Home</a>
-                    <a href='' className='body-two'>Volunteer</a>
-                    <a href='' className='body-two'>Donate</a>
-                    <a href='' className='body-two'>Resources</a>
+                    <a href='' className='body-font body-two'>Home</a>
+                    <a href='' className='body-font body-two'>Volunteer</a>
+                    <a href='' className='body-font body-two'>Donate</a>
+                    <a href='' className='body-font body-two'>Resources</a>
                 </div>
                 <div className='header header-links'>
                     <AuthLink text='SIGN UP' setShowSignup={props.setShowSignup} />
@@ -31,10 +31,10 @@ export const Header = props => {
                 <h1 className='header header-logo'>Logo</h1>
                 <p>Hello {props.user.firstName}</p>
                 <div className='header header-nav'>
-                    <a href='' className='body-one'>Home</a>
-                    <a href='' className='body-one'>Portal</a>
-                    <a href='' className='body-one'>Links</a>
-                    <a href='' className='body-one'>Here</a>
+                    <a href='' className='body-font body-two'>Home</a>
+                    <a href='' className='body-font body-two'>Portal</a>
+                    <a href='' className='body-font body-two'>Links</a>
+                    <a href='' className='body-font body-two'>Here</a>
                 </div>
                 <div onClick={handleLogout}>Logout</div>
             </div>

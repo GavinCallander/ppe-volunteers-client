@@ -12,7 +12,7 @@ export const AuthLink = props => {
     }
     return (
         <div className='auth-link' onClick={showModal}>
-            <p className='body-two'>{props.text}</p>
+            <p className='body-font body-two'>{props.text}</p>
         </div>
     )
 };

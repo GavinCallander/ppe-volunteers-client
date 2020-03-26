@@ -1,15 +1,33 @@
 // dependencies
-import React from 'react';
+
+import React, {useState} from 'react';
 // component imports
 import { CallToAction, InfoLarge, InfoSmall } from '../../components';
+
 // partials imports
 import { Footer, Header } from '../../partials';
+import Login from '../../components/modals/Login'
+import Signup from '../../components/modals/Signup'
 
 export const Landing = props => {
+    
+    let [showSignup, setShowSignup] = useState(false)
+    let [showLogin, setShowLogin] = useState(false)
+    
+    const closeModal = () => {
+        if(showSignup) { setShowSignup(false) }  
+        if(showLogin) { setShowLogin(false) } 
+    }
+    
     return (
         <div className='landing'>
             <div className='landing landing-banner'>
-                <Header />
+                <Header setShowLogin={setShowLogin} setShowSignup={setShowSignup} user={props.user} updateUser={props.updateUser}/>
+            </div>
+            <Signup showSignup={showSignup} closeModal={closeModal} updateUser={props.updateUser} />
+            <Login showLogin={showLogin} closeModal={closeModal} updateUser={props.updateUser}/>
+            <div className='landing landing-donate'></div>
+
                 <div className='landing-banner-message'>
                     <p className='heading heading-one'>
                         Health clinics are in dire need of masks and other supplies
@@ -47,6 +65,7 @@ export const Landing = props => {
                     <CallToAction text='DONATE SUPPLIES' />
                 </div>
             </div>
+
             <Footer />
         </div>
     )

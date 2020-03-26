@@ -1,6 +1,7 @@
 // dependencies
 import React from 'react';
 
+
 export const CallToAction = props => {
     const handleClick = () => {
         props.setShowSignup(true)

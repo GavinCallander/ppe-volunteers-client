@@ -6,16 +6,18 @@
 .app {
   width: 100vw;
 }
+.body-font {
+  font-family: 'Lato', sans-serif;
+}
 .body-one {
   font-size: 2.2em;
-  font-family: 'Lato';
 }
 .body-two {
   font-size: 1.7em;
   text-decoration: none;
 }
 .heading {
-  font-family: 'Volkhov';
+  font-family: 'Volkhov', serif;
   font-weight: bold;
 }
 .heading-one {
@@ -72,18 +74,15 @@
   border: 1px solid black;
   cursor: pointer;
 }
-
 .close-x {
   font-weight: bold;
   cursor: pointer;
   text-align: right;
   padding: 3%;
 }
-
 .form-element {
   padding-right: 2%;
 }
-
 .form-row {
   display: flex;
   flex-direction: row;
@@ -92,9 +91,8 @@
   width: 100%;
   margin-bottom: 2%;
 }
-
 .modal {
-  position: fixed;
+  position: absolute;
   z-index: 1;
   margin: 10% auto;
   width: 60%;
@@ -103,14 +101,12 @@
   background-color: white;
   border: 1px solid gray;
 }
-
 .modal-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 5% 5% 5%;
 }
-
 .modal-form {
   display: flex;
   flex-direction: column;
@@ -118,7 +114,6 @@
   align-items: center;
   width: 25%;
 }
-
 .modal-form-signup {
   display: flex;
   flex-direction: column;
@@ -126,11 +121,9 @@
   align-items: flex-start;
   width: 80%;
 }
-
 .modal-header {
   text-align: center;
 }
-
 /* landing */
 .landing {
   width: 100%;
@@ -140,7 +133,7 @@
 }
 .landing-banner {
   height: 65vh;
-  background-color: chartreuse;
+
 }
 .landing-banner-message {
   margin: 0 auto;

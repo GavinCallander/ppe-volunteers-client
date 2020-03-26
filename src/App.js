@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 // page components
-import { Landing } from './pages/landing';
+import { Landing } from './pages/Landing';
 // styling
 import './App.css';
 

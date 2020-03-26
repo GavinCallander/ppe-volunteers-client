@@ -14,8 +14,8 @@ export const Header = props => {
                 <a href='' className='body-one'>Resources</a>
             </div>
             <div className='header header-links'>
-                <AuthLink text='SIGN UP' />
-                <AuthLink text='LOGIN' />
+                <AuthLink text='SIGN UP' setShowSignup={props.setShowSignup} />
+                <AuthLink text='LOGIN' setShowLogin={props.setShowLogin} />
             </div>
         </div>
     )

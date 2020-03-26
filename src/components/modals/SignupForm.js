@@ -8,20 +8,21 @@ const SignupForm = props => {
     let [verifyPassword, setVerifyPassword] = useState('')
     let [verifyPasswordMessage, setVerifyPasswordMessage] = useState('')
     let [username, setUsername] = useState('')
-    let [address, setAddress] = useState('')
-    let [city, setCity] = useState('')
-    let [state, setState] = useState('')
-    let [zipcode, setZipcode] = useState('')
-    let [region, setRegion] = useState('')
+    let [address, setAddress] = useState('n/a')
+    let [city, setCity] = useState('n/a')
+    let [state, setState] = useState('n/a')
+    let [zipcode, setZipcode] = useState('n/a')
+    let [region, setRegion] = useState('south')
     let [isProducer, setIsProducer] = useState(false)
-    let [willSewMasks, setWillSewMasks] = useState(false)
-    let [willSewGowns, setWillSewGowns] = useState(false)
-    let [willCreateShields, setWillCreateShields] = useState(false)
-    let [isClinic, setIsClinic] = useState(false)
+    let [willSewMasks, setWillSewMasks] = useState([])
+    let [willSewGowns, setWillSewGowns] = useState([])
+    let [willCreateShields, setWillCreateShields] = useState([])
+    // let [isClinic, setIsClinic] = useState(false)
     let [isDriver, setIsDriver] = useState(false)
     let [message, setMessage] = useState('')
 
     //NEED FRONT END FORM VERIFICATION ELEMENTS
+    //need to update so that product options to volunteer for populate from the backend
 
     const checkPasswords = () => {
         if(verifyPassword !== password){
@@ -40,12 +41,11 @@ const SignupForm = props => {
             //research smartystreets and usps apis
 
         //TO DO: confirm how we want to assign user to prod lead - confirm region name and what zipcodes to include
-        //below is for testing purposes
-        setRegion('south')
 
         //create inventory field w/ product reference based on what they have checked off they will be making
-        // let inventory = []
-        // willSewMasks ? inventory.push()
+        let inventory = [...willSewMasks, ...willSewGowns, ...willCreateShields]
+        let isClinic = false
+        props.signupType === 'CLINIC' ? isClinic = true : isClinic = false
 
         //data for posting to signup
 
@@ -60,16 +60,40 @@ const SignupForm = props => {
             state,
             zipcode,
             region,
-            isProducer
+            isProducer,
+            inventory,
+            isClinic,
+            isDriver
         }
 
         //post to signup
+        fetch(`${process.env.REACT_APP_SERVER_URL}/auth/signup`, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            response.json()
+            .then(result => {
+                //if response.ok = true, updateUser(result.token)
+                if(response.ok) {
+                    props.updateUser(result.token)
+                } else {
+                    //else show the error in a message on the page
+                    setMessage(`${response.status} ${response.statusText}: ${result.message}`)
+                }
+            })
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
 
     let volunteerOnlyInputs = ''
     let header = 'Sign up here to request supplies for your clinic'
     if(props.signupType === 'VOLUNTEER'){
-        console.log('volunteer sign up')
         header = 'Sign up here to volunteer'
         volunteerOnlyInputs = (
             <div>
@@ -94,17 +118,17 @@ const SignupForm = props => {
                 
                 <p>What would you like to volunteer for?</p>
                 <div>
-                    <input type='checkbox' name='isProducer' onChange={e => {setIsProducer(e.target.checked); setWillSewMasks(e.target.checked)}} />
+                    <input type='checkbox' name='isProducer' onChange={e => {setIsProducer(e.target.checked); e.target.checked ? setWillSewMasks([{product: "5e791f4a0474cea058c814b6", quantity: 0 }]) : setWillSewMasks([])}} />
                     <label>Sew Masks</label>
                 </div>
               
                 <div>
-                    <input type="checkbox" name='isProducer' onChange={e => {setIsProducer(e.target.checked); setWillSewGowns(e.target.checked)}} />
+                    <input type="checkbox" name='isProducer' onChange={e => {setIsProducer(e.target.checked); e.target.checked ? setWillSewGowns([{product: "5e791f4a0474cea058c814b7", quantity: 0 }]) : setWillSewGowns([])}} />
                     <label>Sew Gowns</label>
                 </div>
                 
                 <div>
-                    <input type="checkbox" name='isProducer' onChange={e => {setIsProducer(e.target.checked); setWillCreateShields(e.target.checked)}} />
+                    <input type="checkbox" name='isProducer' onChange={e => {setIsProducer(e.target.checked); e.target.checked ? setWillCreateShields([{product: "5e791f4a0474cea058c814b8", quantity: 0 }]) : setWillCreateShields([])}} />
                     <label>Create Face Shields (no sewing or special tools required)</label>
                 </div>
                 

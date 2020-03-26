@@ -3,6 +3,8 @@ import React from 'react';
 
 export const CallToAction = props => {
     const handleClick = () => {
+        props.setShowSignup(true)
+
         //if text = volunteer, direct to volunteer sign up
         if(props.text === 'VOLUNTEER') {
             props.setSignupType('VOLUNTEER')

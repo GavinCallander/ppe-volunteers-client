@@ -1,7 +1,7 @@
 // imports
 import { AuthLink } from './AuthLink';
-import { Button } from './Button';
+import { CallToAction } from './CallToAction';
 import { InfoLarge } from './InfoLarge';
 import { InfoSmall } from './InfoSmall';
 // exports
-export { AuthLink, Button, InfoLarge, InfoSmall };
+export { AuthLink, CallToAction, InfoLarge, InfoSmall };

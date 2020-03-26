@@ -8,10 +8,10 @@ export const Header = props => {
         <div className='header'>
             <h1 className='header header-logo'>Logo</h1>
             <div className='header header-nav'>
-                <a href='' className='body-one'>Home</a>
-                <a href='' className='body-one'>Volunteer</a>
-                <a href='' className='body-one'>Donate</a>
-                <a href='' className='body-one'>Resources</a>
+                <a href='' className='body-two'>Home</a>
+                <a href='' className='body-two'>Volunteer</a>
+                <a href='' className='body-two'>Donate</a>
+                <a href='' className='body-two'>Resources</a>
             </div>
             <div className='header header-links'>
                 <AuthLink text='SIGN UP' />

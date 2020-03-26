@@ -81,7 +81,7 @@
   padding: 3%;
 }
 .modal {
-  position: fixed;
+  position: absolute;
   z-index: 1;
   margin: 10% 20%;
   width: 60%;
@@ -114,7 +114,7 @@
 }
 .landing-banner {
   height: 65vh;
-  background-color: chartreuse;
+
 }
 .landing-banner-message {
   margin: 0 auto;

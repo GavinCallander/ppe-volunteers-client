@@ -48,7 +48,6 @@ const Login = props => {
     }
     else {
         return (
-            //FORM NEEDS VALIDATION MESSAGES ON FRONT END
             <div className='modal'>
                 <div className='close-x' onClick={() => props.closeModal()}>X</div>
                 <div className='modal-content'>

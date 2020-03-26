@@ -23,19 +23,16 @@ export const Landing = props => {
         <div className='landing'>
             <div className='landing landing-banner'>
                 <Header setShowLogin={setShowLogin} setShowSignup={setShowSignup} user={props.user} updateUser={props.updateUser}/>
-            </div>
             <Signup showSignup={showSignup} closeModal={closeModal} updateUser={props.updateUser} />
             <Login showLogin={showLogin} closeModal={closeModal} updateUser={props.updateUser}/>
-            <div className='landing landing-donate'></div>
-
-                <div className='landing-banner-message'>
-                    <p className='heading heading-one'>
-                        Health clinics are in dire need of masks and other supplies
-                    </p>
-                    <p className='body-two landing-banner-text'>
-                        Help fight the spread and protect healthcare workers by sewing or delivering supplies for your community clinics
-                    </p>
-                </div>
+            <div className='landing-banner-message'>
+                <p className='heading heading-one'>
+                    Health clinics are in dire need of masks and other supplies
+                </p>
+                <p className='body-two landing-banner-text'>
+                    Help fight the spread and protect healthcare workers by sewing or delivering supplies for your community clinics
+                </p>
+            </div>
             </div>
             <div className='landing landing-main'>
                 <div className='landing-main landing-main-box'>

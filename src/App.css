@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Volkhov&display=swap');
 /* app-wide */
 /* * {
   border: 1px solid black;
@@ -6,8 +7,25 @@
   width: 100vw;
 }
 .body-one {
-  font-size: 1.87em;
+  font-size: 2.2em;
+  font-family: 'Lato';
+}
+.body-two {
+  font-size: 1.7em;
   text-decoration: none;
+}
+.heading {
+  font-family: 'Volkhov';
+  font-weight: bold;
+}
+.heading-one {
+  font-size: 3.2em;
+}
+.heading-two {
+  font-size: 2.8em;
+}
+.heading-three {
+  font-size: 2.3em;
 }
 /* components */
 .auth-link {
@@ -19,6 +37,39 @@
   align-items: center;
   border: 1px solid black;
   border-radius: 35px;
+  cursor: pointer;
+}
+.c2a {
+  margin: 0 auto;
+  padding: .5em;
+  height: 6vh;
+  width: 30vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 35px;
+  cursor: pointer;
+}
+.c2a-donate {
+  margin: .2em auto;
+}
+.info-large {
+  height: 35vh;
+  width: 20vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.info-small {
+  height: 20vh;
+  width: 29.7vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
   cursor: pointer;
 }
 
@@ -63,11 +114,61 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .landing-banner {
-  height: 39vh;
+  height: 65vh;
+  background-color: chartreuse;
+}
+.landing-banner-message {
+  margin: 0 auto;
+  height: 55vh;
+  width: 50vw;
+  text-align: center;
+}
+.landing-banner-text {
+  margin-top: -1.5em;
+}
+.landing-donate {
+  height: 55vh;
+  background-color: dodgerblue;
+}
+.landing-donate-message {
+  width: 50vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.landing-donate-text {
+  margin-top: -1.5em;
+}
+.landing-final {
+  height: 50vh;
+}
+.landing-final-message {
+  width: 50vw;
+  text-align: center;
+}
+.landing-main {
+  height: 140vh;
+  width: 70vw;
+  justify-content: space-around;
+}
+.landing-main-box {
+  height: 35vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 /* partials */
+.footer {
+  height: 10vh;
+  width: 100%;
+  background-color: orange;
+}
 .header {
   height: 15vh;
   width: 100%;
@@ -84,7 +185,4 @@
 }
 .header-nav {
   width: 40vw;
-}
-.header-nav-link {
-  
 }

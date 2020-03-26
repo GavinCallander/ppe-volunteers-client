@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Volkhov&display=swap');
 /* app-wide */
 /* * {
   border: 1px solid black;
@@ -6,20 +7,25 @@
   width: 100vw;
 }
 .body-one {
-  font-size: 2.5em;
+  font-size: 2.2em;
+  font-family: 'Lato';
 }
 .body-two {
-  font-size: 1.87em;
+  font-size: 1.7em;
   text-decoration: none;
 }
+.heading {
+  font-family: 'Volkhov';
+  font-weight: bold;
+}
 .heading-one {
-  font-size: 3.75em;
+  font-size: 3.2em;
 }
 .heading-two {
-  font-size: 3.13em;
+  font-size: 2.8em;
 }
 .heading-three {
-  font-size: 2.5em;
+  font-size: 2.3em;
 }
 /* components */
 .auth-link {
@@ -31,6 +37,7 @@
   align-items: center;
   border: 1px solid black;
   border-radius: 35px;
+  cursor: pointer;
 }
 .c2a {
   margin: 0 auto;
@@ -42,6 +49,7 @@
   align-items: center;
   border: 1px solid black;
   border-radius: 35px;
+  cursor: pointer;
 }
 .c2a-donate {
   margin: .2em auto;
@@ -53,6 +61,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid black;
+  cursor: pointer;
 }
 .info-small {
   height: 20vh;
@@ -61,10 +70,10 @@
   justify-content: center;
   align-items: center;
   border: 1px solid black;
+  cursor: pointer;
 }
 /* landing */
 .landing {
-  height: 250vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -72,7 +81,6 @@
 }
 .landing-banner {
   height: 65vh;
-  border: 1px solid black;
   background-color: chartreuse;
 }
 .landing-banner-message {
@@ -107,9 +115,8 @@
   text-align: center;
 }
 .landing-main {
-  height: 120vh;
+  height: 140vh;
   width: 70vw;
-  border: 1px solid black;
   justify-content: space-around;
 }
 .landing-main-box {

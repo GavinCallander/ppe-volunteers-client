@@ -1,4 +1,52 @@
 /* app-wide */
+/* * {
+  border: 1px solid black;
+} */
 .app {
   width: 100vw;
+}
+.body-one {
+  font-size: 1.87em;
+  text-decoration: none;
+}
+/* components */
+.auth-link {
+  padding: .1em;
+  height: 5.5vh;
+  width: 9vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 35px;
+}
+/* landing */
+.landing {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.landing-banner {
+  height: 39vh;
+}
+/* partials */
+.header {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.header-links {
+  width: 20vw;
+}
+.header-logo {
+  width: 20vw;
+}
+.header-nav {
+  width: 40vw;
+}
+.header-nav-link {
+  
 }

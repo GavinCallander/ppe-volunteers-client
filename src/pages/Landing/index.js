@@ -18,10 +18,10 @@ export const Landing = props => {
     return (
         <div className='landing'>
             <div className='landing landing-banner'>
-                <Header setShowLogin={setShowLogin} setShowSignup={setShowSignup} />
+                <Header setShowLogin={setShowLogin} setShowSignup={setShowSignup} user={props.user} updateUser={props.updateUser}/>
             </div>
-            <Signup showSignup={showSignup} closeModal={closeModal} />
-            <Login showLogin={showLogin} closeModal={closeModal}/>
+            <Signup showSignup={showSignup} closeModal={closeModal} updateUser={props.updateUser} />
+            <Login showLogin={showLogin} closeModal={closeModal} updateUser={props.updateUser}/>
             <div className='landing landing-donate'></div>
             <Footer />
         </div>

@@ -11,13 +11,32 @@ export const Admin = props => {
     if(!props.user) {
         return <Redirect to="/" />
     } 
-
   
     return (
         <div className="portal">
             <Header user={props.user} updateUser={props.updateUser}/>
             <div className='portal-content'>
-                <div>ADMIN TEST</div>
+                
+                <PortalDataView 
+                    text="View All Orders" 
+                    get='orders'
+                    user = {props.user}
+                />
+                <PortalDataView 
+                    text="View All Clinics" 
+                    get='clinics' 
+                    user = {props.user}
+                />
+                <PortalDataView 
+                    text="View All Producers" 
+                    get='producers' 
+                    user = {props.user}
+                />
+                <PortalDataView 
+                    text="View All Products" 
+                    get='products' 
+                    user = {props.user}
+                />
             </div>
             {/* <Footer /> */}
         </div>

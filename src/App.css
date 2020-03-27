@@ -181,6 +181,20 @@
   justify-content: space-around;
   align-items: center;
 }
+
+/* portal */
+.portal {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.portal-content {
+  width: 80%;
+  margin: 0 auto;
+}
+
 /* partials */
 .footer {
   height: 10vh;

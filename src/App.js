@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import jwtDecode from 'jwt-decode'
 // page components
 import { Landing } from './pages/landing';
+import { PortalHome } from './pages/portal'
 // styling
 import './App.css';
 
@@ -62,6 +63,11 @@ export const App = () => {
           render={() => 
           <Landing user={user} updateUser={updateUser}/>
         } />
+
+        <Route path='/portal'
+          render={() =>
+            <PortalHome user={user} updateUser={updateUser}/>
+          }/>
 
       </div>
     </Router>

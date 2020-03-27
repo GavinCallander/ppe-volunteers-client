@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
+import {Redirect} from 'react-router-dom'
 
 const SignupForm = props => {
     let [firstName, setFirstName] = useState('')
@@ -20,6 +21,7 @@ const SignupForm = props => {
     // let [isClinic, setIsClinic] = useState(false)
     let [isDriver, setIsDriver] = useState(false)
     let [message, setMessage] = useState('')
+    let [redirect, setRedirect] = useState(false)
 
     //NEED FRONT END FORM VERIFICATION ELEMENTS
     //need to update so that product options to volunteer for populate from the backend
@@ -81,7 +83,7 @@ const SignupForm = props => {
                 //if response.ok = true, updateUser(result.token)
                 if(response.ok) {
                     props.updateUser(result.token)
-                    props.closeModal()
+                    setRedirect(true)
                 } else {
                     //else show the error in a message on the page
                     setMessage(`${response.status} ${response.statusText}: ${result.message}`)
@@ -91,6 +93,11 @@ const SignupForm = props => {
         .catch(err => {
             console.log(err)
         })
+    }
+
+    if(redirect){
+        props.closeModal()
+        return <Redirect to="/portal"/>
     }
 
     let volunteerOnlyInputs = ''

@@ -1,9 +1,11 @@
 import React, {useState} from 'react'
+import {Redirect} from 'react-router-dom'
 
 const Login = props => {
     
     let [email, setEmail] = useState('')
     let [password, setPassword] = useState('')
+    let [redirect, setRedirect] = useState(false)
     let [message, setMessage] = useState('')
 
 
@@ -31,7 +33,7 @@ const Login = props => {
                 //if response.ok = true, update the user stored in app level state to the token sent back from the post route
                 if(response.ok) {
                     props.updateUser(result.token)
-                    props.closeModal()
+                    setRedirect(true)
                 } else {
                     //else show the error in a message on the page
                     setMessage(`${response.status} ${response.statusText}: ${result.message}`)
@@ -42,6 +44,11 @@ const Login = props => {
             console.log(err)
             setMessage(`Error reaching server, please try again later`)
         })
+    }
+
+    if(redirect) {
+        props.closeModal()
+        return <Redirect to="/portal"/>
     }
     
     if(!props.showLogin) {

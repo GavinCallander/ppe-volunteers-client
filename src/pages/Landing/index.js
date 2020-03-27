@@ -2,11 +2,12 @@
 import React, {useState} from 'react';
 // component imports
 import { CallToAction, InfoLarge, InfoSmall } from '../../components';
+import Login from '../../components/modals/Login';
+import Signup from '../../components/modals/Signup';
 
 // partials imports
 import { Footer, Header } from '../../partials';
-import Login from '../../components/modals/Login'
-import Signup from '../../components/modals/Signup'
+
 
 export const Landing = props => {
     

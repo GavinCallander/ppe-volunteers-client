@@ -15,7 +15,7 @@ const Signup = props => {
         )
     }
 
-    if(!props.showSignup && !props.signupType) {
+    if(!props.showSignup || (!props.showSignup && !props.signupType)) {
         return null
     }
     else if(props.showSignup) {
@@ -26,7 +26,7 @@ const Signup = props => {
                 <div className='modal-content'>
                     <p className='body-one modal-header'>Sign Up</p>
                     {callToActionButtons}
-                    <SignupForm signupType={props.signupType} updateUser={props.updateUser} />
+                    <SignupForm signupType={props.signupType} updateUser={props.updateUser} closeModal={props.closeModal}/>
                 </div>
                 
             </div>

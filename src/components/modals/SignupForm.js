@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
+import {Redirect} from 'react-router-dom'
 
 const SignupForm = props => {
     let [firstName, setFirstName] = useState('')
@@ -8,10 +9,10 @@ const SignupForm = props => {
     let [verifyPassword, setVerifyPassword] = useState('')
     let [verifyPasswordMessage, setVerifyPasswordMessage] = useState('')
     let [username, setUsername] = useState('')
-    let [address, setAddress] = useState('n/a')
-    let [city, setCity] = useState('n/a')
-    let [state, setState] = useState('n/a')
-    let [zipcode, setZipcode] = useState('n/a')
+    let [address, setAddress] = useState('')
+    let [city, setCity] = useState('')
+    let [state, setState] = useState('')
+    let [zipcode, setZipcode] = useState('')
     let [region, setRegion] = useState('south')
     let [isProducer, setIsProducer] = useState(false)
     let [willSewMasks, setWillSewMasks] = useState([])
@@ -20,6 +21,7 @@ const SignupForm = props => {
     // let [isClinic, setIsClinic] = useState(false)
     let [isDriver, setIsDriver] = useState(false)
     let [message, setMessage] = useState('')
+    let [redirect, setRedirect] = useState(false)
 
     //NEED FRONT END FORM VERIFICATION ELEMENTS
     //need to update so that product options to volunteer for populate from the backend
@@ -45,6 +47,7 @@ const SignupForm = props => {
         //create inventory field w/ product reference based on what they have checked off they will be making
         let inventory = [...willSewMasks, ...willSewGowns, ...willCreateShields]
         let isClinic = false
+        
         props.signupType === 'CLINIC' ? isClinic = true : isClinic = false
 
         //data for posting to signup
@@ -55,10 +58,10 @@ const SignupForm = props => {
             email,
             password,
             username,
-            address,
-            city,
-            state,
-            zipcode,
+            address: address ? address : 'na',
+            city: city ? city : 'na',
+            state: state ? state : 'na',
+            zipcode: zipcode ? zipcode : 'na',
             region,
             isProducer,
             inventory,
@@ -80,6 +83,7 @@ const SignupForm = props => {
                 //if response.ok = true, updateUser(result.token)
                 if(response.ok) {
                     props.updateUser(result.token)
+                    setRedirect(true)
                 } else {
                     //else show the error in a message on the page
                     setMessage(`${response.status} ${response.statusText}: ${result.message}`)
@@ -89,6 +93,11 @@ const SignupForm = props => {
         .catch(err => {
             console.log(err)
         })
+    }
+
+    if(redirect){
+        props.closeModal()
+        return <Redirect to="/portal"/>
     }
 
     let volunteerOnlyInputs = ''

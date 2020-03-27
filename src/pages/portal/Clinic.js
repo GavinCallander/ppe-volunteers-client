@@ -1,14 +1,11 @@
-//imports
-import {Admin} from './Admin'
-import {Clinic} from './Clinic'
+import React from 'react'
+import {Redirect} from 'react-router-dom'
 
-//exports
-export {Admin, Clinic};
 // partials imports
 import { Footer, Header } from '../../partials';
 import {PortalDataView} from '../../components'
 
-export const PortalHome = props => {
+export const Clinic = props => {
 
 
     if(!props.user) {
@@ -41,7 +38,7 @@ export const PortalHome = props => {
 else {
     return (
         <div className="portal">
-            <Header user={props.user} updateUser={props.updateUser} />
+            <Header user={props.user} />
             <div className='portal-content'>
                 <p className='body-one'>TBC</p>
             </div>
@@ -50,4 +47,3 @@ else {
     )
 } 
 }
-

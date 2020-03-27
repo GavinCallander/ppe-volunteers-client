@@ -96,8 +96,12 @@ const SignupForm = props => {
     }
 
     if(redirect){
+        if(props.user.isclinic) {
+            props.closeModal()
+            return <Redirect to="/clinic"/>
+        }
         props.closeModal()
-        return <Redirect to="/portal"/>
+        return <Redirect to="/admin"/>
     }
 
     let volunteerOnlyInputs = ''

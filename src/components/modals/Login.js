@@ -46,9 +46,13 @@ const Login = props => {
         })
     }
 
-    if(redirect) {
+    if(redirect){
+        if(props.user && props.user.isclinic) {
+            props.closeModal()
+            return <Redirect to="/clinic"/>
+        }
         props.closeModal()
-        return <Redirect to="/portal"/>
+        return <Redirect to="/admin"/>
     }
     
     if(!props.showLogin) {

@@ -37,9 +37,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
   border-radius: 35px;
   cursor: pointer;
+  color: white;
+}
+.login {
+  background-color: rgb(138, 165, 51);
+}
+.sign-up {
+  background-color: darkorange;
 }
 .c2a {
   margin: 0 auto;
@@ -49,12 +55,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
   border-radius: 35px;
   cursor: pointer;
+  color: white;
 }
 .c2a-donate {
   margin: .2em auto;
+}
+.c2a-ong {
+  background-color: darkorange;
+}
+.c2a-grn {
+  background-color: rgb(138, 165, 51);
 }
 .info-large {
   height: 35vh;
@@ -62,7 +74,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  color: rgb(138, 165, 51);
+  border: 3px solid rgb(138, 165, 51);
+  border-radius: 10px;
   cursor: pointer;
 }
 .info-small {

@@ -52,7 +52,7 @@ export const Landing = props => {
                         <InfoSmall text='Help deliver' />
                     </div>
                     <p className='body-two'>We connect our volunteers with their local clinics</p>
-                    <CallToAction text='VOLUNTEER' setShowSignup={setShowSignup} signupType={signupType} setSignupType={setSignupType} />
+                    <CallToAction text='VOLUNTEER' setShowSignup={setShowSignup} signupType={signupType} setSignupType={setSignupType} class='c2a-ong' />
                     <p className='heading heading-two'>Are you a small clinic with a large need?</p>
                     <div className='landing-main landing-main-box'>
                         <InfoLarge text='Masks' />
@@ -61,7 +61,7 @@ export const Landing = props => {
                     </div>
                 </div>
                 <br />
-                <CallToAction text='REQUEST SUPPLIES' setShowSignup={setShowSignup} signupType={signupType} setSignupType={setSignupType}/>
+                <CallToAction text='REQUEST SUPPLIES' setShowSignup={setShowSignup} signupType={signupType} setSignupType={setSignupType} class='c2a-grn' />
                 <br />
             </div>
             <div className='landing landing-donate' name='donate'>
@@ -70,9 +70,9 @@ export const Landing = props => {
                     <p className='body-two landing-donate-text'>
                         Your contributions cover the cost to volunteers for materials and delivery
                     </p>
-                    <CallToAction text='DONATE MONEY' setShowSignup={setShowSignup} />
+                    <CallToAction text='DONATE MONEY' setShowSignup={setShowSignup} class='c2a-donate c2a-ong' />
                     <br />
-                    <CallToAction text='DONATE SUPPLIES' setShowSignup={setShowSignup} />
+                    <CallToAction text='DONATE SUPPLIES' setShowSignup={setShowSignup} class='c2a-donate c2a-ong' />
                 </div>
             </div>
             <Footer />

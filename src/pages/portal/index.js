@@ -38,7 +38,7 @@ export const PortalHome = props => {
 else {
     return (
         <div className="portal">
-            <Header user={props.user} />
+            <Header user={props.user} updateUser={props.updateUser} />
             <div className='portal-content'>
                 <p className='body-one'>TBC</p>
             </div>

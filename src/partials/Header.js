@@ -13,10 +13,10 @@ export const Header = props => {
             <div className='header'>
                 <h1 className='header header-logo'>Logo</h1>
                 <div className='header header-nav'>
-                    <a href='' className='body-font body-two'>Home</a>
-                    <a href='' className='body-font body-two'>Volunteer</a>
-                    <a href='' className='body-font body-two'>Donate</a>
-                    <a href='' className='body-font body-two'>Resources</a>
+                    <a href='' className='body-font body-two'>HOME</a>
+                    <a href='' className='body-font body-two'>VOLUNTEER</a>
+                    <a href='' className='body-font body-two'>DONATE</a>
+                    <a href='' className='body-font body-two'>RESOURCES</a>
                 </div>
                 <div className='header header-links'>
                     <AuthLink text='SIGN UP' setShowSignup={props.setShowSignup} class='sign-up' />

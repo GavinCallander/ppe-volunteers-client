@@ -59,7 +59,7 @@ const PortalDataView = props => {
     let dataList = data.map(d => {
         return(
             <div>
-                <p>{d.name}</p>
+                <p>{d.name ? d.name : (d.firstName ? d.firstName : d._id)}</p>
                 <a href="#">View details</a>
             </div>
         )

@@ -20,7 +20,7 @@ export const CallToAction = props => {
     }
 
     return(
-        <div className='c2a c2a-donate' onClick={handleClick}>
+        <div className={`c2a ${props.class}`} onClick={handleClick}>
             <p className='component body-one'>{props.text}</p>
          </div>
 

@@ -9,8 +9,8 @@ const Signup = props => {
     if(!props.signupType) {
         callToActionButtons = (
             <div>
-                <CallToAction text="VOLUNTEER" setShowSignup={props.setShowSignup} setSignupType={props.setSignupType} /> 
-                <CallToAction text="REQUEST SUPPLIES" setShowSignup={props.setShowSignup} setSignupType={props.setSignupType} />
+                <CallToAction text="VOLUNTEER" setShowSignup={props.setShowSignup} setSignupType={props.setSignupType} class='c2a-ong c2a-donate' /> 
+                <CallToAction text="REQUEST SUPPLIES" setShowSignup={props.setShowSignup} setSignupType={props.setSignupType} class='c2a-grn c2a-donate' />
             </div>
         )
     }

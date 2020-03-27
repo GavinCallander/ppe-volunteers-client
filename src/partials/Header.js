@@ -19,8 +19,8 @@ export const Header = props => {
                     <a href='' className='body-font body-two'>Resources</a>
                 </div>
                 <div className='header header-links'>
-                    <AuthLink text='SIGN UP' setShowSignup={props.setShowSignup} />
-                    <AuthLink text='LOGIN' setShowLogin={props.setShowLogin}  />
+                    <AuthLink text='SIGN UP' setShowSignup={props.setShowSignup} class='sign-up' />
+                    <AuthLink text='LOGIN' setShowLogin={props.setShowLogin}  class='login' />
                 </div>
             </div>
         )

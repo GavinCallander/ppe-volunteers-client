@@ -15,7 +15,7 @@ export const AuthLink = props => {
         }
     }
     return (
-        <div className='auth-link' onClick={handleClick}>
+        <div className={`auth-link ${props.class}`} onClick={handleClick}>
             <p className='body-font body-two'>{props.text}</p>
         </div>
     )

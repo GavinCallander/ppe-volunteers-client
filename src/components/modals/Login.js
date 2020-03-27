@@ -31,6 +31,7 @@ const Login = props => {
                 //if response.ok = true, update the user stored in app level state to the token sent back from the post route
                 if(response.ok) {
                     props.updateUser(result.token)
+                    props.closeModal()
                 } else {
                     //else show the error in a message on the page
                     setMessage(`${response.status} ${response.statusText}: ${result.message}`)

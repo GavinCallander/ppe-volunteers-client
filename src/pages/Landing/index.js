@@ -1,5 +1,4 @@
 // dependencies
-
 import React, {useState} from 'react';
 // component imports
 import { CallToAction, InfoLarge, InfoSmall } from '../../components';
@@ -35,13 +34,11 @@ export const Landing = props => {
                     signupType={signupType}
                     setSignupType={setSignupType}
                 />
-
                 <Login showLogin={showLogin} closeModal={closeModal} updateUser={props.updateUser}/>
                 <div className='landing-banner-message'>
                     <p className='heading heading-one'>
                         Health clinics are in dire need of masks and other supplies
                     </p>
-
                     <p className='body-font body-two landing-banner-text'>
                         Help fight the spread and protect healthcare workers by sewing or delivering supplies for your community clinics
                     </p>
@@ -67,27 +64,14 @@ export const Landing = props => {
                 <br />
             </div>
             <div className='landing landing-donate' name='donate'>
-                {/* <div className='landing-donate-message'>
+                <div className='landing-donate-message'>
                     <p className='heading heading-one'>Donate</p>
-                    <p className='body-font body-two landing-donate-text'>
+                    <p className='body-two landing-donate-text'>
                         Your contributions cover the cost to volunteers for materials and delivery
                     </p>
-                    <CallToAction text='DONATE MONEY' />
-
+                    <CallToAction text='DONATE MONEY' setShowSignup={setShowSignup} />
                     <br />
-                    <CallToAction text='REQUEST SUPPLIES' setShowSignup={setShowSignup} signupType={signupType} setSignupType={setSignupType}/>
-                    <br />
-                </div> */}
-                <div className='landing landing-donate' name='donate'>
-                    <div className='landing-donate-message'>
-                        <p className='heading heading-one'>Donate</p>
-                        <p className='body-two landing-donate-text'>
-                            Your contributions cover the cost to volunteers for materials and delivery
-                        </p>
-                        <CallToAction text='DONATE MONEY' />
-                        <br />
-                        <CallToAction text='DONATE SUPPLIES' setShowSignup={setShowSignup} />
-                    </div>
+                    <CallToAction text='DONATE SUPPLIES' setShowSignup={setShowSignup} />
                 </div>
             </div>
             <Footer />

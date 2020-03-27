@@ -133,7 +133,8 @@
 }
 .landing-banner {
   height: 65vh;
-
+  /* background-image: url('https://i.imgur.com/CjIBtYG.png'); */
+  background-size: cover;
 }
 .landing-banner-message {
   margin: 0 auto;
@@ -143,10 +144,12 @@
 }
 .landing-banner-text {
   margin-top: -1.5em;
+
 }
 .landing-donate {
-  height: 55vh;
-  background-color: dodgerblue;
+  height: 65vh;
+  /* background-image: url('https://i.imgur.com/CgmpHjO.png'); */
+  background-size: cover;
 }
 .landing-donate-message {
   width: 50vw;
@@ -182,7 +185,7 @@
 .footer {
   height: 10vh;
   width: 100%;
-  background-color: orange;
+
 }
 .header {
   height: 15vh;

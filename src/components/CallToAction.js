@@ -17,7 +17,6 @@ export const CallToAction = props => {
         else {
             props.setShowSignup('false')
         }
-
     }
 
     return(

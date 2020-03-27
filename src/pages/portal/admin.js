@@ -47,7 +47,7 @@ export const Admin = props => {
                     />
                 </div>
                 <div className='portal-view-details'>
-                    <Details showDetails={showDetails} />
+                    <Details showDetails={showDetails} user={props.user}/>
 
                 </div>
             </div>

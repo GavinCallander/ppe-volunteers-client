@@ -67,7 +67,7 @@ const PortalDataView = props => {
         return(
             <div>
                 <p>{d.name ? d.name : (d.firstName ? d.firstName : d._id)}</p>
-                <a href="#" onClick={() => showDetails(d._id)}>View details</a>
+                <a href="#" onClick={() => showDetails(d)}>View details</a>
             </div>
         )
 

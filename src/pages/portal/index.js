@@ -1,12 +1,14 @@
 //imports
-import {Admin} from './Admin'
+import React from 'react';
+import { Redirect } from 'react-router-dom';
+import {Admin} from './admin';
 import {Clinic} from './Clinic'
 
-//exports
-export {Admin, Clinic};
 // partials imports
 import { Footer, Header } from '../../partials';
 import {PortalDataView} from '../../components'
+//exports
+export {Admin, Clinic};
 
 export const PortalHome = props => {
 

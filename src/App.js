@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import jwtDecode from 'jwt-decode'
 // page components
 import { Landing } from './pages/landing';
-import { PortalHome } from './pages/portal'
+import { Admin, Clinic } from './pages/portal'
 // styling
 import './App.css';
 
@@ -64,10 +64,15 @@ export const App = () => {
           <Landing user={user} updateUser={updateUser}/>
         } />
 
-        <Route path='/portal'
+        <Route path='/clinic'
           render={() =>
-            <PortalHome user={user} updateUser={updateUser}/>
-          }/>
+            <Clinic user={user} updateUser={updateUser}/>
+        }/>
+
+        <Route path='/admin'
+          render={() =>
+            <Admin user={user} updateUser={updateUser}/>
+        }/>
 
       </div>
     </Router>

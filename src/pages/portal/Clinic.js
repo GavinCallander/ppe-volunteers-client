@@ -18,7 +18,7 @@ export const Clinic = props => {
     return (
         <div className="portal">
             <Header user={props.user} updateUser={props.updateUser}/>
-            <div className='portal-content'>
+            <div className='portal-all-data'>
                 <PortalDataView 
                     text="View All Clinics" 
                     get='clinics' 

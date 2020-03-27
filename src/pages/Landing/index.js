@@ -1,5 +1,6 @@
 // dependencies
 import React, {useState} from 'react';
+import {Redirect} from 'react-router-dom'
 // component imports
 import { CallToAction, InfoLarge, InfoSmall } from '../../components';
 import Login from '../../components/modals/Login';
@@ -21,6 +22,13 @@ export const Landing = props => {
             setSignupType('')
         }  
         if(showLogin) { setShowLogin(false) } 
+    }
+
+    if(props.user) {
+        if(props.user.isClinic) {
+            return <Redirect to="/clinic"/>
+        }
+        return <Redirect to="/admin"/>
     }
 
     return (

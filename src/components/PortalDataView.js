@@ -56,16 +56,24 @@ const PortalDataView = props => {
         })
     }
     
+    //show details component for specific data clicked on
+    const showDetails = id => {
+        //function to lift up state to tell parent page to show details
+        props.setShowDetails(id)
+    }
+    
+
     let dataList = data.map(d => {
         return(
             <div>
                 <p>{d.name ? d.name : (d.firstName ? d.firstName : d._id)}</p>
-                <a href="#">View details</a>
+                <a href="#" onClick={() => showDetails(d._id)}>View details</a>
             </div>
         )
 
     })
-    
+
+   
     return (
         <div>
             <p className='body-one'>{props.text}</p>

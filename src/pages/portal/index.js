@@ -12,13 +12,11 @@ import {PortalDataView} from '../../components'
 
 export const PortalHome = props => {
 
-
     if(!props.user) {
         return <Redirect to="/" />
     } 
 
     if(props.user.isClinic){
-
   
     return (
         <div className="portal">

@@ -205,8 +205,19 @@
 }
 
 .portal-content {
-  width: 80%;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.portal-all-data {
+  width: 50%;
+
+}
+
+.portal-view-details {
+  width: 50%;
+
 }
 
 /* partials */

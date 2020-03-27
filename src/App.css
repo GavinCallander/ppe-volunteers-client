@@ -92,11 +92,11 @@
   margin-bottom: 2%;
 }
 .modal {
-  position: absolute;
+  position: fixed;
   z-index: 1;
   margin: 10% auto;
-  width: 60%;
-  height: 70%;
+  width: 60vw;
+  height: 70vh;
   overflow: auto;
   background-color: white;
   border: 1px solid gray;

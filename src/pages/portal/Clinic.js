@@ -1,5 +1,5 @@
-import React from 'react'
-import {Redirect} from 'react-router-dom'
+import React from './node_modules/react'
+import {Redirect} from './node_modules/react-router-dom'
 
 // partials imports
 import { Footer, Header } from '../../partials';

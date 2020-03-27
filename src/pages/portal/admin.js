@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import {Redirect} from 'react-router-dom'
+import React, {useState} from './node_modules/react'
+import {Redirect} from './node_modules/react-router-dom'
 
 import Details from './Details'
 

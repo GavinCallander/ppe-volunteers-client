@@ -5,10 +5,8 @@ import {Redirect} from 'react-router-dom'
 import { CallToAction, InfoLarge, InfoSmall } from '../../components';
 import Login from '../../components/modals/Login';
 import Signup from '../../components/modals/Signup';
-
 // partials imports
 import { Footer, Header } from '../../partials';
-
 
 export const Landing = props => {
     
@@ -23,7 +21,6 @@ export const Landing = props => {
         }  
         if(showLogin) { setShowLogin(false) } 
     }
-
     if(props.user) {
         if(props.user.isClinic) {
             return <Redirect to="/clinic"/>

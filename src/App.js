@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import jwtDecode from 'jwt-decode'
 // page components
-import { Landing } from './pages/Landing';
-import { Admin, Clinic } from './pages/Portal'
+import { Landing } from './pages/landing';
+import { Admin, Clinic } from './pages/portal'
 // styling
 import './App.css';
 

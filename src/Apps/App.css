@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Volkhov&display=swap');
+/* app-wide */
+/* * {
+  border: 1px solid black;
+} */
+.app {
+  width: 100vw;
+}
+.body-font {
+  font-family: 'Lato', sans-serif;
+}
+.body-one {
+  font-size: 2.2em;
+}
+.body-two {
+  font-size: 1.7em;
+  text-decoration: none;
+}
+.heading {
+  font-family: 'Volkhov', serif;
+  font-weight: bold;
+}
+.heading-one {
+  font-size: 3.2em;
+}
+.heading-two {
+  font-size: 2.8em;
+}
+.heading-three {
+  font-size: 2.3em;
+}
+/* components */
+.auth-link {
+  padding: .1em;
+  height: 5.5vh;
+  width: 9vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 35px;
+  cursor: pointer;
+  color: white;
+}
+.login {
+  background-color: rgb(138, 165, 51);
+}
+.sign-up {
+  background-color: darkorange;
+}
+.c2a {
+  margin: 0 auto;
+  padding: .5em;
+  height: 6vh;
+  width: 30vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 35px;
+  cursor: pointer;
+  color: white;
+}
+.c2a-donate {
+  margin: .2em auto;
+}
+.c2a-ong {
+  background-color: darkorange;
+}
+.c2a-grn {
+  background-color: rgb(138, 165, 51);
+}
+.info-large {
+  height: 35vh;
+  width: 20vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(138, 165, 51);
+  border: 3px solid rgb(138, 165, 51);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.info-small {
+  height: 20vh;
+  width: 29.7vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.close-x {
+  font-weight: bold;
+  cursor: pointer;
+  text-align: right;
+  padding: 3%;
+}
+.form-element {
+  padding-right: 2%;
+}
+.form-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 2%;
+}
+.modal {
+  position: fixed;
+  z-index: 1;
+  margin: 10% auto;
+  width: 60vw;
+  height: 70vh;
+  overflow: auto;
+  background-color: white;
+  border: 1px solid gray;
+}
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5% 5% 5%;
+}
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+}
+.modal-form-signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
+}
+.modal-header {
+  text-align: center;
+}
+/* landing */
+.landing {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.landing-banner {
+  height: 65vh;
+  /* background-image: url('https://i.imgur.com/CjIBtYG.png'); */
+  background-size: cover;
+}
+.landing-banner-message {
+  margin: 0 auto;
+  height: 55vh;
+  width: 50vw;
+  text-align: center;
+}
+.landing-banner-text {
+  margin-top: -1.5em;
+}
+.landing-donate {
+  height: 65vh;
+  /* background-image: url('https://i.imgur.com/CgmpHjO.png'); */
+  background-size: cover;
+}
+.landing-donate-message {
+  width: 50vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.landing-donate-text {
+  margin-top: -1.5em;
+}
+.landing-final {
+  height: 50vh;
+}
+.landing-final-message {
+  width: 50vw;
+  text-align: center;
+}
+.landing-main {
+  height: 140vh;
+  width: 70vw;
+  justify-content: space-around;
+}
+.landing-main-box {
+  height: 35vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* portal */
+.portal {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.portal-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.portal-all-data {
+  width: 50%;
+
+}
+.portal-view-details {
+  width: 50%;
+
+}
+
+/* partials */
+.footer {
+  height: 10vh;
+  width: 100%;
+}
+.header {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.header-links {
+  width: 20vw;
+}
+.header-logo {
+  width: 20vw;
+}
+.header-nav {
+  width: 40vw;
+}

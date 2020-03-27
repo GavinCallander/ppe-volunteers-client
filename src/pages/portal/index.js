@@ -8,7 +8,7 @@ import {Clinic} from './Clinic'
 import { Footer, Header } from '../../partials';
 import {PortalDataView} from '../../components'
 //exports
-export {Admin, Clinic};
+
 
 export const PortalHome = props => {
 
@@ -53,3 +53,4 @@ else {
 } 
 }
 
+export {Admin, Clinic};

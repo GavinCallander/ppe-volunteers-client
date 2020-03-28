@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 // page components
 import { Landing } from '../content/pages/landing';
-import { Admin, Clinic } from '../content/pages/portal';
+import { Admin as AdminHome } from '../content/pages/landing/Admin'
+import { Admin as AdminPortal, Clinic } from '../content/pages/portal';
 
 // styling
 import './App.css';
@@ -53,9 +54,13 @@ export const App = () => {
                     render={() =>
                     <Clinic user={user} updateUser={updateUser} />
                 } />
+                <Route path='/dak394cl9k'
+                    render={() =>
+                    <AdminHome user={user} updateUser={updateUser} />
+                } />
                 <Route path='/admin'
                     render={() => 
-                    <Admin user={user} updateUser={updateUser} />
+                    <AdminPortal user={user} updateUser={updateUser} />
                 } />
             </div>
         </Router>

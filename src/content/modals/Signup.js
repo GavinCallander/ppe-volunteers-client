@@ -1,11 +1,11 @@
 import React from 'react';
 import { CallToAction } from '../components';
-import { SignupForm } from './SignupForm';
+import { SignupForm } from '../components/SignupForm';
 
 export const Signup = props => {
-    let callToAcionButtons;
+    let callToActionButtons;
     if (!props.signupType) {
-        callToAcionButtons = (
+        callToActionButtons = (
             <div>
                 <CallToAction
                     class='c2a-donate c2a-ong'
@@ -32,7 +32,7 @@ export const Signup = props => {
                     <p className='body-one modal-header'>
                         Sign up    
                     </p> 
-                    {callToAcionButtons}
+                    {callToActionButtons}
                     <SignupForm
                         closeModal={props.closeModal}
                         signupType={props.signupType}

@@ -6,6 +6,11 @@ import { Footer, Header } from '../../partials';
 import { PortalDataView } from '../../components';
 
 export const Clinic = props => {
+
+    if(!props.user) {
+        return <Redirect to="/"/>
+    }
+
     return (
         <div className='portal'>
             <Header

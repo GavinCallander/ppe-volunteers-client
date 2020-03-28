@@ -1,9 +1,13 @@
 // dependencies
-import React from 'react';
+import React, {useState} from 'react';
+import {Redirect} from 'react-router-dom'
+
 // component imports
 import { AuthLink } from '../components'
 
 export const Header = props => {
+    const [redirect, setRedirect] = useState(false)
+    
     const handleLogout = e => {
         localStorage.removeItem('userToken')
         props.updateUser(null)

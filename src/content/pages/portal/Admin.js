@@ -1,5 +1,6 @@
 // dependencies
 import React, { useState } from 'react';
+import {Redirect} from 'react-router-dom'
 // pages
 import { Details } from './Details';
 // partials
@@ -9,6 +10,12 @@ import { PortalDataView } from '../../../components';
 
 export const Admin = props => {
     const [showDetails, setShowDetails] = useState('');
+
+    if(!props.user) {
+        return <Redirect to="/"/>
+    }
+
+
     return (
         <div className='portal'>
             <Header

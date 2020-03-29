@@ -1,7 +1,7 @@
 //imports
-import React from './node_modules/react';
-import { Redirect } from './node_modules/react-router-dom';
-import {Admin} from './Admin';
+import React from 'react';
+import { Redirect } from 'react-router-dom';
+import {Admin} from './admin';
 import {Clinic} from './Clinic'
 
 // partials imports

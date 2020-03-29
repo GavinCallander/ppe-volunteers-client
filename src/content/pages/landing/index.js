@@ -5,6 +5,8 @@ import { Redirect } from 'react-router-dom';
 import { CallToAction, InfoLarge, InfoSmall } from '../../components';
 // modals
 import { Login, Signup } from '../../modals';
+// import {Signup} from '../../modals'
+// import Login from '../../../components/modals/Login'
 // partials
 import { Footer, Header } from '../../partials';
 

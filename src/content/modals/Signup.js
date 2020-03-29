@@ -6,7 +6,8 @@ export const Signup = props => {
     let callToActionButtons;
     if (!props.signupType) {
         callToActionButtons = (
-            <div>
+            <div className='modal-cta-btns'>
+                <p className='body-one modal-header'> Sign up </p> 
                 <CallToAction
                     class='c2a-donate c2a-ong'
                     setShowSignup={props.setShowSignup}
@@ -29,9 +30,6 @@ export const Signup = props => {
             <div className='modal'>
                 <p className='close-x' onClick={props.closeModal}>X</p>
                 <div className='modal-content'>
-                    <p className='body-one modal-header'>
-                        Sign up    
-                    </p> 
                     {callToActionButtons}
                     <SignupForm
                         closeModal={props.closeModal}

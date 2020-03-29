@@ -79,44 +79,32 @@ export const SignupForm = props => {
         return <Redirect to='/admin' />
     };
     let volunteerOnlyInputs;
-    let header = 'Sign in here to request supplies for your clinic';
+    let header = 'Sign up here to request supplies for your clinic';
     if (props.signupType === 'VOLUNTEER') {
-        header = 'Sign up here to volunteer'
+        header = 'Volunteer Signup'
         volunteerOnlyInputs = (
-            <div>
-                <div className="form-row">
-                    <label>Street Address</label>
-                    <input type="text" value={address} onChange={e => setAddress(e.currentTarget.value)} />
+            <div className="form-row">
+                
+                <div className="form-col">
+                <p>I would like to:</p>
+                    <div>
+                        <input type='checkbox' name='isProducer' onChange={e => {setIsProducer(e.target.checked); e.target.checked ? setWillSewMasks([{product: "5e791f4a0474cea058c814b6", quantity: 0 }]) : setWillSewMasks([])}} />
+                        <label>Sew Masks</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name='isProducer' onChange={e => {setIsProducer(e.target.checked); e.target.checked ? setWillSewGowns([{product: "5e791f4a0474cea058c814b7", quantity: 0 }]) : setWillSewGowns([])}} />
+                        <label>Sew Gowns</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name='isProducer' onChange={e => {setIsProducer(e.target.checked); e.target.checked ? setWillCreateShields([{product: "5e791f4a0474cea058c814b8", quantity: 0 }]) : setWillCreateShields([])}} />
+                        <label>Create Face Shields </label>
+                    </div>
+                    <div>
+                        <input type='checkbox' name='isDriver'  onChange={e => setIsDriver(e.target.checked)} />
+                        <label>Pick up and Deliver Materials</label>
+                    </div>
                 </div>
-                <div className="form-row">
-                    <label className="form-element">City
-                        <input type="text" value={city} onChange={e => setCity(e.currentTarget.value)} />
-                    </label>
-                    <label className="form-element">State
-                        <input type="text" value={state} onChange={e => setState(e.currentTarget.value)} />
-                    </label>
-                </div>
-                <div className="form-row">
-                    <label>Zipcode</label>
-                    <input type="text" value={zipcode} onChange={e => setZipcode(e.currentTarget.value)} />
-                </div>
-                <p>What would you like to volunteer for?</p>
-                <div>
-                    <input type='checkbox' name='isProducer' onChange={e => {setIsProducer(e.target.checked); e.target.checked ? setWillSewMasks([{product: "5e791f4a0474cea058c814b6", quantity: 0 }]) : setWillSewMasks([])}} />
-                    <label>Sew Masks</label>
-                </div>
-                <div>
-                    <input type="checkbox" name='isProducer' onChange={e => {setIsProducer(e.target.checked); e.target.checked ? setWillSewGowns([{product: "5e791f4a0474cea058c814b7", quantity: 0 }]) : setWillSewGowns([])}} />
-                    <label>Sew Gowns</label>
-                </div>
-                <div>
-                    <input type="checkbox" name='isProducer' onChange={e => {setIsProducer(e.target.checked); e.target.checked ? setWillCreateShields([{product: "5e791f4a0474cea058c814b8", quantity: 0 }]) : setWillCreateShields([])}} />
-                    <label>Create Face Shields (no sewing or special tools required)</label>
-                </div>
-                <div>
-                    <input type='checkbox' name='isDriver'  onChange={e => setIsDriver(e.target.checked)} />
-                    <label>Pick up and Deliver Materials</label>
-                </div>
+                <div className="form-col"></div>
             </div>
         )
     }
@@ -124,44 +112,56 @@ export const SignupForm = props => {
         return null
     }
     return (
-        <form className='modal-form-signup' onSubmit={handleSubmit}>
+        <div className="form-content">
+            <p className="body-one">Sign up</p>
             <p>{header}</p>
-            <div className="form-row">
-                <label className="form-element">First Name
-                    <input type="text" value={firstName} onChange={e => setFirstName(e.currentTarget.value)} />
-                </label>
-            
-                <label className="form-element">Last Name
-                    <input type="text" value={lastName} onChange={e => setLastName(e.currentTarget.value)} />
-                </label>
-            </div>
-            <div className="form-row">
-                <label className="form-element">Email
+            <form className='modal-form-signup' onSubmit={handleSubmit}>
+                <div className="form-row">
+                    <div className="form-col">
+                        <label>First Name</label>
+                        <input type="text" value={firstName} onChange={e => setFirstName(e.currentTarget.value)} />
+                        <label>Last Name</label>
+                        <input type="text" value={lastName} onChange={e => setLastName(e.currentTarget.value)} />
+
+                        <label>Email</label> 
                         <input type="text" value={email} onChange={e => setEmail(e.currentTarget.value)} />
-                </label> 
-            </div>
-            <div className="form-row">
-                <label className="form-element">Password
-                    <input type="password" value={password} onChange={e => setPassword(e.currentTarget.value)} />     
-                </label>
-            </div>
-            <div className="form-row">
-                <label className="form-element">Verify Password
-                    <input type="password" value={verifyPassword} onChange={e => {setVerifyPassword(e.currentTarget.value); 
-                        // checkPasswords()
-                    }} />
-                    <p>{verifyPasswordMessage}</p>
-                </label>
-            </div>
-            <div className="form-row">
-                <label>Display name
-                    <input type="text" value={username} onChange={e => setUsername(e.currentTarget.value)}/>
-                    <small>This will be the name displayed to others with access to the site.</small>
-                </label>
-            </div>
-            {volunteerOnlyInputs}
-            <input type="submit" value="Sign Up"/>
-            {message}
-        </form>
+                        
+                        <label>Password  </label>
+                        <input type="password" value={password} onChange={e => setPassword(e.currentTarget.value)} />     
+                    
+                        <label>Verify Password   </label>
+                        <input type="password" value={verifyPassword} onChange={e => {setVerifyPassword(e.currentTarget.value); 
+                            // checkPasswords()
+                        }} />
+                        <small>{verifyPasswordMessage}</small>
+                    
+                    
+
+                        <label>Display name</label>
+                        <input type="text" value={username} onChange={e => setUsername(e.currentTarget.value)}/>
+                        <small>This will be the name displayed to others with access to the site.</small>
+                        
+                    </div>
+                    <div className="form-col">
+                        <label>Street Address</label>
+                        <input type="text" value={address} onChange={e => setAddress(e.currentTarget.value)} />
+                        <label>City </label>
+                        <input type="text" value={city} onChange={e => setCity(e.currentTarget.value)} />
+                        
+                        <label>State </label>
+                        <input type="text" value={state} onChange={e => setState(e.currentTarget.value)} />
+                        
+                        <label>Zipcode</label>
+                        <input type="text" value={zipcode} onChange={e => setZipcode(e.currentTarget.value)} />
+                    </div>
+                </div>
+
+                {volunteerOnlyInputs}
+                {/* {clinicOnlyInputs} */}
+                <input className='form-submit-btn' type="submit" value="Sign Up"/>
+  
+                {message}
+            </form>
+        </div>
     )
 };

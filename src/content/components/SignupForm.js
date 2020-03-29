@@ -20,24 +20,48 @@ export const SignupForm = props => {
     const [willSewGowns, setWillSewGowns] = useState([]);
     const [willCreateShields, setWillCreateShields] = useState([]);
     const [isClinic, setIsClinic] = useState(false);
+    const [clinicName, setClinicName] = useState('')
+    const [numberOfEmployees, setNumberOfEmployees] = useState(0)
     const [isDriver, setIsDriver] = useState(false);
     const [message, setMessage] = useState('');
     const [redirect, setRedirect] = useState(false);
+    const [maskRq, setMaskRq] = useState(0);
+    const [gownRq, setGownRq] = useState(0);
+    const [shieldRq, setShieldRq] = useState(0);
+ 
     
     const handleSubmit = e => {
         e.preventDefault();
-        let inventory = [...willSewMasks, ...willSewGowns, ...willCreateShields];
         props.signupType === 'CLINIC' ? setIsClinic(true) : setIsClinic(false)
+        
+
+        //if clinic, post clinic info to clinic & create order request
+        // const postClinic = () => {
+        //     let clinicData = {
+        //         name: clinicName,
+        //         address,
+        //         city,
+        //         state,
+        //         zipcode,
+        //         region,
+        //         numberOfEmployees,
+        //         // assignedUser: 
+        //     }
+        // }
+        
+        //POST USER
+        let inventory = [...willSewMasks, ...willSewGowns, ...willCreateShields];
+        
         let data = {
             firstName,
             lastName,
             email,
             password,
             username,
-            address: address ? address : 'na',
-            city: city ? city : 'na',
-            state: state ? state : 'na',
-            zipcode: zipcode ? zipcode : 'na',
+            address: address,
+            city: city,
+            state: state,
+            zipcode: zipcode,
             region,
             isProducer,
             isClinic,
@@ -59,6 +83,7 @@ export const SignupForm = props => {
                 .then(result => {
                     if (response.ok) {
                         props.updateUser(result.token)
+                        
                         setRedirect(true)
                     } else {
                         setMessage(`${response.status} ${response.statusText}: ${result.message}`)
@@ -79,9 +104,28 @@ export const SignupForm = props => {
         return <Redirect to='/admin' />
     };
     let volunteerOnlyInputs;
+    let volunteerAddressInputs;
+    let clinicAddressInputs;
+    let clinicOnlyInputs;
     let header = 'Sign up here to request supplies for your clinic';
     if (props.signupType === 'VOLUNTEER') {
         header = 'Volunteer Signup'
+        volunteerAddressInputs = (
+           
+            <div className="form-col">
+                <label>Street Address</label>
+                <input type="text" value={address} onChange={e => setAddress(e.currentTarget.value)} />
+                <label>City </label>
+                <input type="text" value={city} onChange={e => setCity(e.currentTarget.value)} />
+                
+                <label>State </label>
+                <input type="text" value={state} onChange={e => setState(e.currentTarget.value)} />
+                
+                <label>Zipcode</label>
+                <input type="text" value={zipcode} onChange={e => setZipcode(e.currentTarget.value)} />
+            </div>
+        )
+        
         volunteerOnlyInputs = (
             <div className="form-row">
                 
@@ -105,6 +149,43 @@ export const SignupForm = props => {
                     </div>
                 </div>
                 <div className="form-col"></div>
+            </div>
+        )
+    } else if(props.signupType === 'CLINIC') {
+        clinicAddressInputs = (
+            <div className="form-col">
+                <label>Clinic Name</label>
+                <input type="text" value={clinicName} onChange={e=>setClinicName(e.currentTarget.value)}/>
+                <label>Street Address</label>
+                <input type="text" value={address} onChange={e => setAddress(e.currentTarget.value)} />
+                <label>City </label>
+                <input type="text" value={city} onChange={e => setCity(e.currentTarget.value)} />
+                
+                <label>State </label>
+                <input type="text" value={state} onChange={e => setState(e.currentTarget.value)} />
+                
+                <label>Zipcode</label>
+                <input type="text" value={zipcode} onChange={e => setZipcode(e.currentTarget.value)} />
+                
+                <label>How many employees does your clinic have?</label>
+                <input type="number" value={numberOfEmployees} onChange={e => setNumberOfEmployees(e.currentTarget.value)}></input>
+            </div>
+        )
+        
+        clinicOnlyInputs = (
+            <div className="form-row"> 
+                <div className="form-col">
+                    <p>Please input the quantities you are requesting.</p>
+                    <label>Masks</label>
+                    <input type="number" value={maskRq} onChange={e => setMaskRq(e.currentTarget.value) } />
+                    <label>Gowns</label>
+                    <input type="number" value={gownRq} onChange={e => setGownRq(e.currentTarget.value) } />
+                    <label>Face Shields</label>
+                    <input type="number" value={shieldRq} onChange={e => setShieldRq(e.currentTarget.value) } />
+                </div>
+                <div className="form-col">
+                    
+                </div>
             </div>
         )
     }
@@ -142,23 +223,15 @@ export const SignupForm = props => {
                         <small>This will be the name displayed to others with access to the site.</small>
                         
                     </div>
-                    <div className="form-col">
-                        <label>Street Address</label>
-                        <input type="text" value={address} onChange={e => setAddress(e.currentTarget.value)} />
-                        <label>City </label>
-                        <input type="text" value={city} onChange={e => setCity(e.currentTarget.value)} />
-                        
-                        <label>State </label>
-                        <input type="text" value={state} onChange={e => setState(e.currentTarget.value)} />
-                        
-                        <label>Zipcode</label>
-                        <input type="text" value={zipcode} onChange={e => setZipcode(e.currentTarget.value)} />
-                    </div>
+           
+                        {clinicAddressInputs}
+                        {volunteerAddressInputs}
+        
                 </div>
 
                 {volunteerOnlyInputs}
-                {/* {clinicOnlyInputs} */}
-                <input className='form-submit-btn' type="submit" value="Sign Up"/>
+                {clinicOnlyInputs}
+                <input className='form-submit-btn' type="submit" value={props.signupType === 'VOLUNTEER' ? "Sign Up" : "Request Supplies"}/>
   
                 {message}
             </form>
